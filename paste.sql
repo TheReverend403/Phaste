@@ -1,0 +1,10 @@
+CREATE TABLE pastes (
+  id INT(11) NOT NULL auto_increment,
+  content TEXT,
+  private BOOL NOT NULL DEFAULT 0,
+  creator_ipv4 INT UNSIGNED NOT NULL,
+  creator_ipv6 BINARY(16) NOT NULL,
+  created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY id (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
