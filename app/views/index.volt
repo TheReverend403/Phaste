@@ -13,7 +13,7 @@
         {{ content() }}
         {{ javascript_include('//code.jquery.com/jquery-1.11.3.min.js') }}
         {{ javascript_include('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js') }}
-        {{ javascript_include('//cdnjs.ddcloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js') }}
+        {{ javascript_include('js/highlight.pack.js') }}
         <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>
