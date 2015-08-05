@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             {{ link_to(conf.app.host, conf.app.name, 'class': "navbar-brand", false) }}
