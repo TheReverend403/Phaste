@@ -1,3 +1,3 @@
 /app/cache/
 /app/config/config.php
-
+*.swp
