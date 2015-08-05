@@ -13,8 +13,8 @@ class ViewController extends ControllerBase
 
     public function showAction($slug)
     {
-        $paste = Paste::findFirstBySlug($slug, 
-           array('cache' => array('lifetime' => 3600, 'key' => 'paste-'.$slug)
+        $paste = Paste::findFirstBySlug($slug, array(
+            'cache' => array('lifetime' => 3600, 'key' => $slug)
         ));
 
         if (!$paste)

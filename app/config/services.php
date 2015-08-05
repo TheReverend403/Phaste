@@ -12,6 +12,7 @@ use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
+use Phalcon\Flash\Session as FlashSession;
 
 /**
  * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
@@ -87,8 +88,6 @@ $di->set('router', function () {
     return $router;
 });
 
-use Phalcon\Flash\Session as FlashSession;
-
 $di->set('flashSession', function () {
     $flash = new FlashSession(array(
         'error'   => 'alert alert-danger',
@@ -126,3 +125,18 @@ $di->set('dispatcher', function() {
     return $dispatcher;
 
 }, true);
+
+$di->set('modelsCache', function () {
+
+    $frontCache = new FrontendData(array(
+        "lifetime" => 3600
+    ));
+
+    // Memcached connection settings
+    $cache = new BackendMemcache($frontCache, array(
+        "host" => "localhost",
+        "port" => "11211"
+    ));
+
+    return $cache;
+});
