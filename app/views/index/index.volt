@@ -2,10 +2,10 @@
     <h1>New Paste</h1>
 </div>
 {{ flashSession.output() }}
-{{ form("new", "method": "post", 'class': "form-horizontal") }}
+{{ form("new", "method": "post") }}
 
 <div class="form-group">
-    {{ text_area("content", 'rows': 25, 'class': "form-control") }}
+    {{ text_area("content", 'rows': 20, 'class': "form-control") }}
     <hr>
     <div class="row">
         <div class="col-sm-2">
