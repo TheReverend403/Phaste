@@ -4,8 +4,8 @@ CREATE TABLE pastes (
   content TEXT,
   language VARCHAR(10) NOT NULL DEFAULT 'plain',
   private BOOL NOT NULL DEFAULT 0,
-  creator_ipv4 INT UNSIGNED NOT NULL,
-  creator_ipv6 BINARY(16) NOT NULL,
+  creator_ipv4 INT UNSIGNED NOT NULL DEFAULT 0,
+  creator_ipv6 BINARY(16) NOT NULL DEFAULT 0,
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   UNIQUE KEY slug (slug)

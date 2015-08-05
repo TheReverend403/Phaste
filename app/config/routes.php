@@ -21,7 +21,7 @@ $router->add(
 );
 
 $router->add(
-    "/v/[a-zA-Z0-9]+",
+    "/v/([a-zA-Z0-9]{1,12})",
     array(
         "controller" => "view",
         "action"     => "show",

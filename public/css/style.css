@@ -1,3 +1,13 @@
 .hljs {
     background: none;
 }
+
+/*
+html, body, .container, form .form-horizontal, .form-group, textarea #contents, .form-control {
+    height: 90%;
+}
+*/
+textarea {
+    resize: none;
+    width: 100%;
+}

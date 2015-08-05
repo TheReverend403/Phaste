@@ -1,5 +1,7 @@
 <?php
 
+use Phalcon\Mvc\Model\Validator\Uniqueness;
+
 class Pastes extends \Phalcon\Mvc\Model
 {
 

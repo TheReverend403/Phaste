@@ -3,11 +3,6 @@
 class ViewController extends ControllerBase 
 {
 
-    public function initialize()
-    {
-        parent::initialize();
-    }
-
     public function indexAction()
     {
 
@@ -15,7 +10,9 @@ class ViewController extends ControllerBase
 
     public function showAction($slug)
     {
-        $paste = Pastes::findFirstBySlug($slug);
+        $paste = Pastes::findFirstBySlug($slug, 
+           array('cache' => array('lifetime' => 3600, 'key' => 'paste-'.$slug)
+        ));
         $this->view->paste = $paste;
         $this->tag->appendTitle($paste->slug);
     }
