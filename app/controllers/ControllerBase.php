@@ -6,7 +6,7 @@ class ControllerBase extends Controller
 {
     protected function initialize()
     {
-        $this->tag->prependTitle('FoxPaste - ');
+        $this->tag->prependTitle($this->conf->app->name . ' | ');
         $this->view->setTemplateAfter('main');
     }
 }
