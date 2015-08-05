@@ -32,7 +32,7 @@ class NewController extends \Phalcon\Mvc\Controller
                 {
                     $this->flashSession->error($message);
                 }
-                return $this->response->redirect('index');
+                return $this->response->redirect();
             }
             return $this->response->redirect('v/'.$slug);
         }
