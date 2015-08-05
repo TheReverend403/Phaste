@@ -29,5 +29,5 @@ try {
     echo $application->handle()->getContent();
 
 } catch (\Exception $e) {
-    echo $e->getMessage();
+    echo "PhalconException: ", $e->getMessage();
 }

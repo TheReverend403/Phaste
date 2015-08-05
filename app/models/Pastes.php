@@ -13,7 +13,19 @@ class Pastes extends \Phalcon\Mvc\Model
      *
      * @var string
      */
+    public $slug;
+
+    /**
+     *
+     * @var string
+     */
     public $content;
+
+    /**
+     *
+     * @var string
+     */
+    public $language;
 
     /**
      *
@@ -71,4 +83,16 @@ class Pastes extends \Phalcon\Mvc\Model
         return parent::findFirst($parameters);
     }
 
+    public function validation()
+    {
+
+        $this->validate(new Uniqueness(
+            array(
+                "field"   => "slug",
+                "message" => "Paste ID must be unique!"
+            )
+        ));
+
+        return $this->validationHasFailed() != true;
+    }
 }

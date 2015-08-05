@@ -78,3 +78,11 @@ $di->setShared('session', function () {
 
     return $session;
 });
+
+/**
+* add routing capabilities
+*/
+$di->set('router', function () {
+    require 'routes.php';
+    return $router;
+});
