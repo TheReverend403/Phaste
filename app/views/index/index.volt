@@ -1,6 +1,7 @@
 <div class="page-header">
     <h1>New Paste</h1>
 </div>
+{{ flashSession.output() }}
 {{ form("new", "method": "post", 'class': "form-horizontal") }}
 
 <div class="form-group">

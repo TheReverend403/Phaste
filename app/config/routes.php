@@ -29,4 +29,14 @@ $router->add(
     )
 );
 
+$router->add(
+    "/v/([a-zA-Z0-9]{1,12})/raw",
+    array(
+        "controller" => "view",
+        "action"     => "show",
+        "id"     => 1,
+        "raw"    => true,
+    )
+);
+
 return $router;

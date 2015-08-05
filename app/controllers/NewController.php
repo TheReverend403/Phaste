@@ -1,33 +1,38 @@
 <?php
-use Phalcon\Text;
 
+use Phalcon\Text;
 
 class NewController extends \Phalcon\Mvc\Controller
 {
 
     public function indexAction()
     {
+        // No view needed since this is all backend stuff.
+        $this->view->disable();
         if ($this->request->isPost()) 
         {
             $content = $this->request->getPost('content');
             if (strlen($content) == 0)
             {
                 $this->response->setStatusCode(400, "Paste content cannot be empty.");
-                return $this->response->redirect('/');
+                $this->flashSession->error("Paste content cannot be empty!");
+                return $this->response->redirect();
             }
             $slug = Text::random(Text::RANDOM_ALNUM, 12);
 
             $paste = new Pastes();
+
             $paste->slug = $slug;
+            $paste->creator_ipv4 = $this->request->getClientAddress();
             $success = $paste->save($this->request->getPost(), array('content'));
             if (!$success) 
             {
-                echo "Sorry, the following problems were generated: ";
+                $this->flashSession->error("Paste could not be saved!");
                 foreach ($paste->getMessages() as $message) 
                 {
-                    echo $message->getMessage(), "<br/>";
+                    $this->flashSession->error($message);
                 }
-                return;
+                return $this->response->redirect('index');
             }
             return $this->response->redirect('v/'.$slug);
         }

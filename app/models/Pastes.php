@@ -37,15 +37,9 @@ class Pastes extends \Phalcon\Mvc\Model
 
     /**
      *
-     * @var integer
-     */
-    public $creator_ipv4;
-
-    /**
-     *
      * @var string
      */
-    public $creator_ipv6;
+    public $creator_ipv4;
 
     /**
      *

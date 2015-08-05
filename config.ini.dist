@@ -1,0 +1,4 @@
+[app]
+host = https://paste.example.com
+name = FoxPaste
+

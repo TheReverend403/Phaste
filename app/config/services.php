@@ -86,3 +86,46 @@ $di->set('router', function () {
     require 'routes.php';
     return $router;
 });
+
+use Phalcon\Flash\Session as FlashSession;
+
+$di->set('flashSession', function () {
+    $flash = new FlashSession(array(
+        'error'   => 'alert alert-danger',
+        'success' => 'alert alert-success',
+        'notice'  => 'alert alert-info',
+        'warning' => 'alert alert-warning'
+    ));
+    return $flash;
+});
+
+$app_config_file = APP_PATH . '/config.ini';
+$app_config = new \Phalcon\Config\Adapter\Ini($app_config_file);
+$di->set('conf', $app_config);
+
+$di->set('dispatcher', function() {
+
+    $eventsManager = new \Phalcon\Events\Manager();
+
+    $eventsManager->attach("dispatch:beforeException", function($event, $dispatcher, $exception) {
+
+        //Handle 404 exceptions
+        if ($exception instanceof \Phalcon\Mvc\Dispatcher\Exception) {
+            $dispatcher->forward(array(
+                'controller' => 'index',
+                'action' => 'notFound'
+            ));
+            return false;
+        }
+
+        return false;
+    });
+
+    $dispatcher = new \Phalcon\Mvc\Dispatcher();
+
+    //Bind the EventsManager to the dispatcher
+    $dispatcher->setEventsManager($eventsManager);
+
+    return $dispatcher;
+
+}, true);

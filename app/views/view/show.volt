@@ -1,5 +1,6 @@
 <div class="page-header">
-    <h3><small>https://paste2.revthefox.co.uk/</small>{{ paste.slug }}</h3>
+    <p>{{ conf.app.host }}/v/<span class="text-danger">{{ paste.slug }}</span></p>
+    {{ link_to('v/' ~ paste.slug ~ '/raw', 'View Raw') }}
 </div>
 
-<pre><code>{{ paste.content }}</code></pre>
+<pre><code>{{ paste.content|e }}</code></pre>
