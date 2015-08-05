@@ -20,7 +20,7 @@ class NewController extends \Phalcon\Mvc\Controller
             }
             $slug = Text::random(Text::RANDOM_ALNUM, 12);
 
-            $paste = new Pastes();
+            $paste = new Paste();
 
             $paste->slug = $slug;
             $paste->creator_ipv4 = $this->request->getClientAddress();
