@@ -18,7 +18,7 @@ class NewController extends \Phalcon\Mvc\Controller
                 $this->flashSession->error("Paste content cannot be empty!");
                 return $this->response->redirect();
             }
-            $slug = Text::random(Text::RANDOM_ALNUM, 12);
+            $slug = Text::random(Text::RANDOM_ALNUM, 13);
 
             $paste = new Paste();
 

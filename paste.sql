@@ -1,7 +1,7 @@
 SET @@session.time_zone='+00:00';
 CREATE TABLE pastes (
   id INT(11) NOT NULL auto_increment,
-  slug VARCHAR(12) NOT NULL,
+  slug VARCHAR(13) NOT NULL,
   content TEXT,
   language VARCHAR(10) NOT NULL DEFAULT 'plain',
   private BOOL NOT NULL DEFAULT 0,
