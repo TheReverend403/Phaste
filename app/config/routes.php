@@ -4,7 +4,7 @@ use Phalcon\Mvc\Router;
 
 $router = new Router();
 
-$router->add(
+$router->addGet(
     "/",
     array(
         "controller" => "index",
@@ -20,15 +20,15 @@ $router->addPost(
     )
 );
 
-$router->add(
-    "/v/",
+$router->addGet(
+    "/v",
     array(
         "controller" => "index",
         "action"     => "index",
     )
 );
 
-$router->add(
+$router->addGet(
     "/v/([a-zA-Z0-9]{1,13})",
     array(
         "controller" => "view",
@@ -37,7 +37,7 @@ $router->add(
     )
 );
 
-$router->add(
+$router->addGet(
     "/v/([a-zA-Z0-9]{1,13})/raw",
     array(
         "controller" => "view",
@@ -47,15 +47,15 @@ $router->add(
     )
 );
 
-$router->add(
-    "/view/",
+$router->addGet(
+    "/view",
     array(
         "controller" => "index",
         "action"     => "index",
     )
 );
 
-$router->add(
+$router->addGet(
     "/view/([a-zA-Z0-9]{1,13})",
     array(
         "controller" => "view",
@@ -64,7 +64,7 @@ $router->add(
     )
 );
 
-$router->add(
+$router->addGet(
     "/view/([a-zA-Z0-9]{1,13})/raw",
     array(
         "controller" => "view",
@@ -73,4 +73,6 @@ $router->add(
         "raw"    => true,
     )
 );
+
+$router->removeExtraSlashes(true);
 return $router;
