@@ -9,33 +9,22 @@ class NewController extends \Phalcon\Mvc\Controller
     {
         // No view needed since this is all backend stuff.
         $this->view->disable();
-        if ($this->request->isPost()) 
+
+        $slug = Text::random(Text::RANDOM_ALNUM, 13);
+
+        $paste = new Paste();
+        $paste->slug = $slug;
+        $paste->creator_ipv4 = $this->request->getClientAddress();
+
+        if (!$paste->save($this->request->getPost(), array('content'))) 
         {
-            $content = $this->request->getPost('content');
-            if (strlen($content) == 0)
+            foreach ($paste->getMessages() as $message) 
             {
-                $this->response->setStatusCode(400, "Paste content cannot be empty.");
-                $this->flashSession->error("Paste content cannot be empty!");
-                return $this->response->redirect();
+                $this->flashSession->error($message->getMessage());
             }
-            $slug = Text::random(Text::RANDOM_ALNUM, 13);
-
-            $paste = new Paste();
-
-            $paste->slug = $slug;
-            $paste->creator_ipv4 = $this->request->getClientAddress();
-            $success = $paste->save($this->request->getPost(), array('content'));
-            if (!$success) 
-            {
-                $this->flashSession->error("Paste could not be saved!");
-                foreach ($paste->getMessages() as $message) 
-                {
-                    $this->flashSession->error($message);
-                }
-                return $this->response->redirect();
-            }
-            return $this->response->redirect('v/'.$slug);
+            return $this->response->redirect();
         }
+        return $this->response->redirect('v/'.$slug);
     }
 
 }

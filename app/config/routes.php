@@ -12,6 +12,14 @@ $router->add(
     )
 );
 
+$router->addPost(
+    "/new",
+    array(
+        "controller" => "new",
+        "action"     => "index",
+    )
+);
+
 $router->add(
     "/v/",
     array(

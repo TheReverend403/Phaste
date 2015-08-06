@@ -1,6 +1,7 @@
 <?php
 
 use Phalcon\Mvc\Model\Validator\Uniqueness;
+use Phalcon\Mvc\Model\Validator\StringLength;
 
 class Paste extends \Phalcon\Mvc\Model
 {
@@ -81,6 +82,14 @@ class Paste extends \Phalcon\Mvc\Model
 
     public function validation()
     {
+
+        $this->validate(new StringLength(
+            array(
+                "min"     => 1,
+                "field"   => "content",
+                "messageMinimum" => "Paste cannot be empty!"
+            )
+        ));
 
         $this->validate(new Uniqueness(
             array(
