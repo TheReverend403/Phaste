@@ -11,23 +11,3 @@ $loader->registerDirs(
         $config->application->modelsDir
     )
 )->register();
-
-$router = new Phalcon\Mvc\Router();
-
-$router->add(
-    "/v/",
-    array(
-        "controller" => "index",
-        "action"     => "index",
-    )
-);
-
-$router->add(
-    "/v/:params",
-    array(
-        "controller" => "view",
-        "action"     => "index",
-    )
-);
-
-$router->handle();
