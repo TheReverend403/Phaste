@@ -1,6 +1,7 @@
 [app]
 host = https://paste.example.com
 name = FoxPaste
+
 [piwik]
 host = piwik.example.com
 siteid = 1
