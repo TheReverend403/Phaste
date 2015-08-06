@@ -4,7 +4,6 @@ use Phalcon\Text;
 
 class NewController extends \Phalcon\Mvc\Controller
 {
-
     public function indexAction()
     {
         // No view needed since this is all backend stuff.
@@ -26,6 +25,4 @@ class NewController extends \Phalcon\Mvc\Controller
         }
         return $this->response->redirect('v/'.$slug);
     }
-
 }
-

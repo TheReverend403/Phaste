@@ -4,14 +4,7 @@ use Phalcon\Http\Response;
 
 class ViewController extends ControllerBase 
 {
-
-    public function indexAction()
-    {
-        $this->view->disable();
-        return $this->response->redirect('/');
-    }
-
-    public function showAction($slug)
+    public function indexAction($slug)
     {
         $paste = Paste::findFirstBySlug($slug, array(
             'cache' => array('lifetime' => 3600, 'key' => $slug)
@@ -39,7 +32,6 @@ class ViewController extends ControllerBase
     public function notFoundAction()
     { 
         $this->response->setStatusCode(404, 'Not Found');
-        $this->tag->appendTitle('Not found');
+        $this->tag->appendTitle('Paste not found');
     }
 }
-
