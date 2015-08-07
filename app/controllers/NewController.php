@@ -9,7 +9,13 @@ class NewController extends \Phalcon\Mvc\Controller
         // No view needed since this is all backend stuff.
         $this->view->disable();
 
-        $slug = Text::random(Text::RANDOM_ALNUM, 13);
+        // Generate random slugs until we find one not in use.
+        $slug;
+        do
+        {
+            $slug = Text::random(Text::RANDOM_ALNUM, 13);   
+        }
+        while (Paste::findFirstBySlug($slug));
 
         $paste = new Paste();
         $paste->slug = $slug;
