@@ -7,8 +7,8 @@ dbname = phaste
 charset = utf8
 
 [app]
-# Must be set to the root of your app with no trailing slashes
-host = https://paste.example.com
+# Must be set to the root of your app with trailing slash
+host = https://paste.example.com/
 name = FoxPaste
 
 [piwik]

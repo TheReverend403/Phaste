@@ -17,12 +17,12 @@ class NewController extends \Phalcon\Mvc\Controller
 
         if (!$paste->save($this->request->getPost(), array('content'))) 
         {
-            foreach ($paste->getMessages() as $message) 
+            foreach ($paste->getMessages() as $message)
             {
                 $this->flash->error($message->getMessage());
             }
             return $this->response->redirect();
         }
-        return $this->response->redirect('/v/'.$slug);
+        return $this->response->redirect($this->url->get("v/$slug"));
     }
 }
