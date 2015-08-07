@@ -9,7 +9,7 @@ charset = utf8
 [app]
 # Must be set to the root of your app with trailing slash
 host = https://paste.example.com/
-name = FoxPaste
+name = Phaste
 # https://bootswatch.com/
 # Set to 'default' to use default bootstrap
 site_theme = yeti
