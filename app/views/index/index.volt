@@ -18,6 +18,6 @@
 {% endblock %}
 
 {% block js %}
-<script>window.onload = document.getElementById('pastebox').select();</script>
+<script>document.getElementById('pastebox').select();</script>
 {% include "partials/piwik.volt" %}
 {% endblock %}
