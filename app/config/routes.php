@@ -18,37 +18,21 @@ $router->addPost(
     )
 );
 
+// Covers /v/ and /view/
 $router->addGet(
-    "/v/([a-zA-Z0-9]{1,13})",
+    "/v(iew)?/([a-zA-Z0-9]{1,13})",
     array(
         "controller" => "view",
-        "slug"     => 1,
+        "slug"     => 2, // ([a-zA-Z0-9]{1,13})
     )
 );
 
 $router->addGet(
-    "/v/([a-zA-Z0-9]{1,13})/raw",
+    "/v(iew)?/([a-zA-Z0-9]{1,13})/raw",
     array(
         "controller" => "view",
         "action" => "raw",
-        "slug"     => 1,
-    )
-);
-
-$router->addGet(
-    "/view/([a-zA-Z0-9]{1,13})",
-    array(
-        "controller" => "view",
-        "slug"     => 1,
-    )
-);
-
-$router->addGet(
-    "/view/([a-zA-Z0-9]{1,13})/raw",
-    array(
-        "controller" => "view",
-        "action" => "raw",
-        "slug"     => 1,
+        "slug"     => 2, // ([a-zA-Z0-9]{1,13})
     )
 );
 
