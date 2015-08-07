@@ -22,7 +22,7 @@ $router->addGet(
     "/v/([a-zA-Z0-9]{1,13})",
     array(
         "controller" => "view",
-        "id"     => 1,
+        "slug"     => 1,
     )
 );
 
@@ -30,7 +30,7 @@ $router->addGet(
     "/v/([a-zA-Z0-9]{1,13})/raw",
     array(
         "controller" => "view",
-        "id"     => 1,
+        "slug"     => 1,
         "raw"    => true,
     )
 );
@@ -39,7 +39,7 @@ $router->addGet(
     "/view/([a-zA-Z0-9]{1,13})",
     array(
         "controller" => "view",
-        "id"     => 1,
+        "slug"     => 1,
     )
 );
 
@@ -47,7 +47,7 @@ $router->addGet(
     "/view/([a-zA-Z0-9]{1,13})/raw",
     array(
         "controller" => "view",
-        "id"     => 1,
+        "slug"     => 1,
         "raw"    => true,
     )
 );

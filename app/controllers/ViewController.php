@@ -4,8 +4,9 @@ use Phalcon\Http\Response;
 
 class ViewController extends ControllerBase 
 {
-    public function indexAction($slug)
+    public function indexAction()
     {
+        $slug = $this->dispatcher->getParam("slug");
         $paste = Paste::findFirstBySlug($slug, array(
             'cache' => array('lifetime' => 3600, 'key' => $slug)
         ));
