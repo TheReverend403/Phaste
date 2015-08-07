@@ -4,30 +4,35 @@ use Phalcon\Http\Response;
 
 class ViewController extends ControllerBase 
 {
-    public function indexAction()
+    public $paste;
+    function initialize()
     {
+        parent::initialize();
         $slug = $this->dispatcher->getParam("slug");
-        $paste = Paste::findFirstBySlug($slug, array(
+        $this->paste = Paste::findFirstBySlug($slug, array(
             'cache' => array('lifetime' => 3600, 'key' => $slug)
         ));
 
-        if (!$paste)
+        if (!$this->paste)
         {
             return $this->dispatcher->forward(array(
                 'controller' => 'view', 'action' => 'notFound')
             ); 
         }
+    }
 
-        if ($this->dispatcher->getParam("raw"))
-        {
-            $plain_response = new Response();
-            $plain_response->setHeader("Content-Type", "text/plain");
-            $plain_response->setContent($paste->content);
-            return $plain_response;
-        }
+    public function indexAction()
+    {
+        $this->view->paste = $this->paste;
+        $this->tag->appendTitle($this->paste->slug);
+    }
 
-        $this->view->paste = $paste;
-        $this->tag->appendTitle($paste->slug);
+    public function rawAction()
+    {
+        $plain_response = new Response();
+        $plain_response->setHeader("Content-Type", "text/plain");
+        $plain_response->setContent($this->paste->content);
+        return $plain_response;
     }
 
     public function notFoundAction()

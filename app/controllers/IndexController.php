@@ -12,5 +12,4 @@ class IndexController extends ControllerBase
         $this->response->setStatusCode(404, 'Not Found');
         $this->tag->appendTitle('Page not found');
     }
-
 }
