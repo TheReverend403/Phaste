@@ -82,7 +82,6 @@ class Paste extends \Phalcon\Mvc\Model
 
     public function validation()
     {
-
         $this->validate(new StringLength(
             array(
                 "min"     => 1,
