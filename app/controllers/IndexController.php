@@ -6,10 +6,4 @@ class IndexController extends ControllerBase
     {
         $this->tag->appendTitle('Index');
     }
-
-    public function notFoundAction()
-    {
-        $this->response->setStatusCode(404, 'Not Found');
-        $this->tag->appendTitle('Page Not Found');
-    }
 }

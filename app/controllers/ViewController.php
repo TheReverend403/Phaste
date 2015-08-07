@@ -12,13 +12,16 @@ class ViewController extends ControllerBase
 
         $slug = $this->dispatcher->getParam("slug");
         $this->paste = Paste::findFirstBySlug($slug, array(
-            'cache' => array('lifetime' => 3600, 'key' => $slug)
+            'cache' => array(
+                'lifetime' => 3600, 
+                'key' => $slug)
         ));
 
         if (!$this->paste)
         {
             return $this->dispatcher->forward(array(
-                'controller' => 'index', 'action' => 'notFound')
+                'controller' => 'error', 
+                'action' => 'e404')
             ); 
         }
     }

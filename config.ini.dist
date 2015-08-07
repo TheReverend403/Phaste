@@ -7,13 +7,13 @@ dbname = phaste
 charset = utf8
 
 [app]
-# Must be set to the root of your app with trailing slash
+; Must be set to the root of your app with trailing slash
 host = https://paste.example.com/
 name = Phaste
-# https://bootswatch.com/
-# Set to 'default' to use default bootstrap
+; https://bootswatch.com/
+; Set to 'default' to use default bootstrap
 site_theme = yeti
-# https://highlightjs.org/static/demo/
+; https://highlightjs.org/static/demo/
 highlight_theme = github
 
 [piwik]
