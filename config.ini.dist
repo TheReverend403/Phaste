@@ -1,4 +1,6 @@
 [database]
+; In theory, this should work with any of Phalcon's adapters
+; without any code changes, but no promises.
 adapter = Mysql
 host = localhost
 username = root
