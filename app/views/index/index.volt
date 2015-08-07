@@ -7,7 +7,7 @@
 
 {{ flash.output() }}
 
-{{ form("new", "method": "post") }}
+{{ form("/new", "method": "post") }}
     <div class="form-group">
         {{ text_area("content", 'rows': 20, 'class': "form-control", 'autofocus': true) }}
     </div>

@@ -1,4 +1,13 @@
+[database]
+adapter = Mysql
+host = localhost
+username = root
+password = myverysecurepassword
+dbname = phaste
+charset = utf8
+
 [app]
+# Must be set to the root of your app with no trailing slashes
 host = https://paste.example.com
 name = FoxPaste
 

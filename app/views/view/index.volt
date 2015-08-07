@@ -8,7 +8,7 @@
 {% block content %}
 <div class="page-header">
     <p>{{ conf.app.host }}/v/<span class="text-warning">{{ paste.slug }}</span></p>
-    {{ link_to('v/' ~ paste.slug ~ '/raw', 'View Raw') }}
+    {{ link_to('/v/' ~ paste.slug ~ '/raw', 'View Raw') }}
 </div>
 
 <pre><code>{{ paste.content|e }}</code></pre>

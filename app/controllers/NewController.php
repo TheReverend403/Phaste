@@ -23,6 +23,6 @@ class NewController extends \Phalcon\Mvc\Controller
             }
             return $this->response->redirect();
         }
-        return $this->response->redirect('v/'.$slug);
+        return $this->response->redirect('/v/'.$slug);
     }
 }
