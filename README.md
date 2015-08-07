@@ -1,6 +1,6 @@
 Phaste
 ======
-###### The 'h' is silent.5
+###### (The 'h' is silent)
 
 God what a great name. Probably.
 
