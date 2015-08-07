@@ -1,4 +1,4 @@
 config.ini
-/app/cache/
+/app/cache/*.php
 /app/config/config.php
 *.swp
