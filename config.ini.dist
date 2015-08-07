@@ -11,7 +11,10 @@ charset = utf8
 host = https://paste.example.com/
 name = FoxPaste
 # https://bootswatch.com/
-theme = yeti
+# Set to 'default' to use default bootstrap
+site_theme = yeti
+# https://highlightjs.org/static/demo/
+highlight_theme = github
 
 [piwik]
 host = piwik.example.com
