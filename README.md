@@ -4,7 +4,9 @@ Phaste
 
 God what a great name. Probably.
 
-Anyway...
+Demo available at https://paste.foxdev.co
+
+Anyway, how to install...
 
 * Install [Phalcon](https://phalconphp.com/en/).
 * Install [Phalcon dev tools](https://github.com/phalcon/phalcon-devtools).
