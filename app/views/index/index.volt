@@ -5,11 +5,11 @@
     <h3>New Paste</h3>
 </div>
 
-{{ flashSession.output() }}
+{{ flash.output() }}
 
 {{ form("new", "method": "post") }}
     <div class="form-group">
-        {{ text_area("content", 'rows': 20, 'class': "form-control", 'id': "pastebox") }}
+        {{ text_area("content", 'rows': 20, 'class': "form-control", 'autofocus': true) }}
     </div>
     <div class="form-group">
         {{ submit_button("Submit", 'class': "btn btn-success") }}
@@ -18,6 +18,5 @@
 {% endblock %}
 
 {% block js %}
-<script>document.getElementById('pastebox').select();</script>
 {% include "partials/piwik.volt" %}
 {% endblock %}

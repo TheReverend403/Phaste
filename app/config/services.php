@@ -88,7 +88,7 @@ $di->set('router', function () {
     return $router;
 });
 
-$di->set('flashSession', function () {
+$di->set('flash', function () {
     $flash = new FlashSession(array(
         'error'   => 'alert alert-danger',
         'success' => 'alert alert-success',

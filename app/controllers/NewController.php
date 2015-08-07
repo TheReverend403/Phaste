@@ -19,7 +19,7 @@ class NewController extends \Phalcon\Mvc\Controller
         {
             foreach ($paste->getMessages() as $message) 
             {
-                $this->flashSession->error($message->getMessage());
+                $this->flash->error($message->getMessage());
             }
             return $this->response->redirect();
         }
