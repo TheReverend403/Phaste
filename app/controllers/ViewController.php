@@ -5,9 +5,11 @@ use Phalcon\Http\Response;
 class ViewController extends ControllerBase 
 {
     public $paste;
+    // Set up data here since both actions use the same data.
     function initialize()
     {
         parent::initialize();
+
         $slug = $this->dispatcher->getParam("slug");
         $this->paste = Paste::findFirstBySlug($slug, array(
             'cache' => array('lifetime' => 3600, 'key' => $slug)
@@ -16,7 +18,7 @@ class ViewController extends ControllerBase
         if (!$this->paste)
         {
             return $this->dispatcher->forward(array(
-                'controller' => 'view', 'action' => 'notFound')
+                'controller' => 'index', 'action' => 'notFound')
             ); 
         }
     }
@@ -33,11 +35,5 @@ class ViewController extends ControllerBase
         $plain_response->setHeader("Content-Type", "text/plain");
         $plain_response->setContent($this->paste->content);
         return $plain_response;
-    }
-
-    public function notFoundAction()
-    { 
-        $this->response->setStatusCode(404, 'Not Found');
-        $this->tag->appendTitle('Paste not found');
     }
 }
