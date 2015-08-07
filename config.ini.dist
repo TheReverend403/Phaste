@@ -10,6 +10,8 @@ charset = utf8
 # Must be set to the root of your app with trailing slash
 host = https://paste.example.com/
 name = FoxPaste
+# https://bootswatch.com/
+theme = yeti
 
 [piwik]
 host = piwik.example.com

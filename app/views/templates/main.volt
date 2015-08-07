@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/ico" href="{{ static_url('img/favicon.ico') }}"/>
         {{ stylesheet_link('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') }}
-        {{ stylesheet_link('//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css') }}
+        {{ stylesheet_link('//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/' ~ conf.app.theme ~ '/bootstrap.min.css') }}
         {% block stylesheets %}
         {% endblock %}
         {{ get_title() }}
