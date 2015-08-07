@@ -14,15 +14,16 @@ class ViewController extends ControllerBase
         $this->paste = Paste::findFirstBySlug($slug, array(
             'cache' => array(
                 'lifetime' => 3600, 
-                'key' => $slug)
+                'key' => $slug
+            )
         ));
 
         if (!$this->paste)
         {
             return $this->dispatcher->forward(array(
                 'controller' => 'error', 
-                'action' => 'e404')
-            ); 
+                'action' => 'e404'
+            )); 
         }
     }
 
