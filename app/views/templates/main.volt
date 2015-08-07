@@ -8,7 +8,6 @@
         {{ stylesheet_link('//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css') }}
         {% block stylesheets %}
         {% endblock %}
-        {{ stylesheet_link('css/style.css') }}
         {{ get_title() }}
     </head>
     <body>

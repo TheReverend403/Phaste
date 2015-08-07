@@ -2,6 +2,7 @@
 
 {% block stylesheets %}
 {{ stylesheet_link('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/github.min.css') }}
+{{ stylesheet_link('css/style.css') }}
 {% endblock %}
 
 {% block content %}
