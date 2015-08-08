@@ -25,7 +25,7 @@ class NewController extends \Phalcon\Mvc\Controller
         $paste->private = $this->request->getPost("private") == null ? 0 : 1;
         $paste->creator_ipv4 = $this->request->getClientAddress();
 
-        if (!$paste->save($this->request->getPost(), array('content'))) 
+        if (!$paste->save($this->request->getPost(), array('content')))
         {
             foreach ($paste->getMessages() as $message)
             {

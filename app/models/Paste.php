@@ -80,6 +80,11 @@ class Paste extends \Phalcon\Mvc\Model
         return parent::findFirst($parameters);
     }
 
+    public function beforeValidation() 
+    {
+        $this->content = trim($this->content);
+    }
+
     public function validation()
     {
         $this->validate(new StringLength(

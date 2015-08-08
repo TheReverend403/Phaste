@@ -4,6 +4,6 @@ class IndexController extends ControllerBase
 {
     public function indexAction()
     {
-        $this->tag->appendTitle('Index');
+        $this->tag->appendTitle('New Paste');
     }
 }
