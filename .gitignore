@@ -1,5 +1,4 @@
 .phalcon
 config.ini
 /app/cache/*.php
-/app/config/config.php
 *.swp
