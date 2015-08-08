@@ -21,10 +21,10 @@
 {% endblock %}
 
 {% block js %}
-{% include "partials/piwik.volt" %}
 <script>
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 </script>
+{% include "partials/piwik.volt" %}
 {% endblock %}
