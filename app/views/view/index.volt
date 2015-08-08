@@ -15,9 +15,9 @@
 {% endblock %}
 
 {% block js %}
-{{ javascript_include('js/highlight.pack.js') }}
 {% if paste.private == 0 %}
 	{% include "partials/piwik.volt" %}
 {% endif %}
+{{ javascript_include('js/highlight.pack.js') }}
 <script>hljs.initHighlightingOnLoad();</script>
 {% endblock %}
