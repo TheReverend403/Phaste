@@ -49,6 +49,12 @@ class Paste extends \Phalcon\Mvc\Model
     public $created;
 
     /**
+     *
+     * @var integer
+     */
+    public $disable_highlight;
+
+    /**
      * Returns table name mapped in the model.
      *
      * @return string
@@ -78,11 +84,6 @@ class Paste extends \Phalcon\Mvc\Model
     public static function findFirst($parameters = null)
     {
         return parent::findFirst($parameters);
-    }
-
-    public function beforeValidation() 
-    {
-        $this->content = trim($this->content);
     }
 
     public function validation()

@@ -60,12 +60,21 @@ class PastesMigration_100 extends Migration
                     )
                 ),
                 new Column(
+                    'disable_highlight',
+                    array(
+                        'type' => Column::TYPE_INTEGER,
+                        'notNull' => true,
+                        'size' => 1,
+                        'after' => 'private'
+                    )
+                ),
+                new Column(
                     'creator_ipv4',
                     array(
                         'type' => Column::TYPE_VARCHAR,
                         'notNull' => true,
                         'size' => 64,
-                        'after' => 'private'
+                        'after' => 'disable_highlight'
                     )
                 ),
                 new Column(
