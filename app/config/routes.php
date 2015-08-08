@@ -23,7 +23,7 @@ $router->addGet(
     "/v(iew)?/([a-zA-Z0-9]{1,13})",
     array(
         "controller" => "view",
-        "slug"     => 2 // ([a-zA-Z0-9]{1,13})
+        "id"     => 2 // ([a-zA-Z0-9]{1,13})
     )
 );
 
@@ -32,7 +32,7 @@ $router->addGet(
     array(
         "controller" => "view",
         "action" => "raw",
-        "slug"     => 2 // ([a-zA-Z0-9]{1,13})
+        "id"     => 2 // ([a-zA-Z0-9]{1,13})
     )
 );
 

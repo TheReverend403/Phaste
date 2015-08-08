@@ -2,7 +2,10 @@
 
 defined('APP_PATH') || define('APP_PATH', realpath('.'));
 
-return new \Phalcon\Config(array(
+$app_config_file = APP_PATH . '/config.ini';
+$app_config = new \Phalcon\Config\Adapter\Ini($app_config_file);
+
+$config = new \Phalcon\Config(array(
     'application' => array(
         'controllersDir' => APP_PATH . '/app/controllers/',
         'modelsDir'      => APP_PATH . '/app/models/',
@@ -11,5 +14,9 @@ return new \Phalcon\Config(array(
         'pluginsDir'     => APP_PATH . '/app/plugins/',
         'libraryDir'     => APP_PATH . '/app/library/',
         'cacheDir'       => APP_PATH . '/app/cache/',
+        'baseUri'       => $app_config->app->host,
     )
 ));
+
+$config->merge($app_config);
+return $config;

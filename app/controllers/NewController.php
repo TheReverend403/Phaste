@@ -9,24 +9,25 @@ class NewController extends \Phalcon\Mvc\Controller
         // No view needed since this is all backend stuff.
         $this->view->disable();
 
-        // Generate random slugs until we find one not in use.
+        // Generate random ids until we find one not in use.
         // This will cause one additional SQL query at minimum when creating a paste.
-        $slug;
+        $id;
         do
         {
-            $slug = Text::random(Text::RANDOM_ALNUM, 13);   
+            $id = Text::random(Text::RANDOM_ALNUM, rand(5,13));   
         }
-        while (Paste::findFirstBySlug($slug));
+        while (Paste::findFirstByid($id));
 
         $paste = new Paste();
-        $paste->slug = $slug;
+        $paste->id = $id;
+        $paste->content = $this->request->getPost("content");
         // No sanitisation needed if we accept anything at all to mean true and nothing to mean false.
         // Also addresses http://stackoverflow.com/a/14067312
         $paste->private = $this->request->getPost("private") == null ? 0 : 1;
-        $paste->disable_highlight = $this->request->getPost("disable_highlight") == null ? 0 : 1;
-        $paste->creator_ipv4 = $this->request->getClientAddress();
+        $paste->owner_addr = $this->request->getClientAddress();
+        $paste->size_bytes = strlen($paste->content);
 
-        if (!$paste->save($this->request->getPost(), array('content')))
+        if (!$paste->save())
         {
             foreach ($paste->getMessages() as $message)
             {
@@ -34,6 +35,6 @@ class NewController extends \Phalcon\Mvc\Controller
             }
             return $this->response->redirect();
         }
-        return $this->response->redirect($this->url->get("v/$slug"));
+        return $this->response->redirect($this->url->get("v/$id"));
     }
 }

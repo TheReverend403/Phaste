@@ -8,15 +8,9 @@ class Paste extends \Phalcon\Mvc\Model
 
     /**
      *
-     * @var integer
-     */
-    public $id;
-
-    /**
-     *
      * @var string
      */
-    public $slug;
+    public $id;
 
     /**
      *
@@ -28,7 +22,7 @@ class Paste extends \Phalcon\Mvc\Model
      *
      * @var string
      */
-    public $language;
+    public $lang;
 
     /**
      *
@@ -38,21 +32,36 @@ class Paste extends \Phalcon\Mvc\Model
 
     /**
      *
-     * @var string
+     * @var integer
      */
-    public $creator_ipv4;
+    public $owner_id;
 
     /**
      *
      * @var string
      */
-    public $created;
+    public $owner_addr;
 
     /**
      *
      * @var integer
      */
-    public $disable_highlight;
+    public $size_bytes;
+
+    /**
+     *
+     * @var string
+     */
+    public $created_date;
+
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->setSource("'pastes'");
+        $this->skipAttributes(array('created_date'));
+    }
 
     /**
      * Returns table name mapped in the model.
@@ -98,16 +107,11 @@ class Paste extends \Phalcon\Mvc\Model
 
         $this->validate(new Uniqueness(
             array(
-                "field"   => "slug",
+                "field"   => "id",
                 "message" => "Paste ID must be unique!"
             )
         ));
 
         return $this->validationHasFailed() != true;
-    }
-
-    public function initialize()
-    {
-        $this->skipAttributes(array('id', 'created'));
     }
 }

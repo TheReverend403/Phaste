@@ -19,10 +19,6 @@ use Phalcon\Flash\Session as FlashSession;
  */
 $di = new FactoryDefault();
 
-$app_config_file = APP_PATH . '/config.ini';
-$app_config = new \Phalcon\Config\Adapter\Ini($app_config_file);
-$config->merge($app_config);
-
 $di->set('config', function() use ($config) {
     return $config;
 });

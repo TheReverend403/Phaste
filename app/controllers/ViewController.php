@@ -10,11 +10,11 @@ class ViewController extends ControllerBase
     {
         parent::initialize();
 
-        $slug = $this->dispatcher->getParam("slug");
-        $this->paste = Paste::findFirstBySlug($slug, array(
+        $id = $this->dispatcher->getParam("id");
+        $this->paste = Paste::findFirstByid($id, array(
             'cache' => array(
                 'lifetime' => 3600, 
-                'key' => $slug
+                'key' => $id
             )
         ));
 
@@ -30,7 +30,7 @@ class ViewController extends ControllerBase
     public function indexAction()
     {
         $this->view->paste = $this->paste;
-        $this->tag->appendTitle($this->paste->slug);
+        $this->tag->appendTitle($this->paste->id);
     }
 
     public function rawAction()
