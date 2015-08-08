@@ -22,7 +22,7 @@ class NewController extends \Phalcon\Mvc\Controller
         $paste->slug = $slug;
         // No sanitisation needed if we accept anything at all to mean true and nothing to mean false.
         // Also addresses http://stackoverflow.com/a/14067312
-        $paste->private = $this->request->getPost("private") != null ? 1 : 0;
+        $paste->private = $this->request->getPost("private") == null ? 0 : 1;
         $paste->creator_ipv4 = $this->request->getClientAddress();
 
         if (!$paste->save($this->request->getPost(), array('content'))) 
