@@ -2,7 +2,7 @@
 
 {% block stylesheets %}
 {% if paste.disable_highlight == 0 %}
-	{{ stylesheet_link('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/' ~ conf.app.highlight_theme ~ '.min.css') }}
+	{{ stylesheet_link('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/' ~ config.app.highlight_theme ~ '.min.css') }}
 	{{ stylesheet_link('css/style.css') }}
 {% endif %}
 {% endblock %}
@@ -21,7 +21,7 @@
 	{% include "partials/piwik.volt" %}
 {% endif %}
 {% if paste.disable_highlight == 0 %}
-	{{ javascript_include('js/highlight.pack.js') }}
+	{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js') }}
 	<script>hljs.initHighlightingOnLoad();</script>
 {% endif %}
 {% endblock %}

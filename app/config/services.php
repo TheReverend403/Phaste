@@ -21,15 +21,19 @@ $di = new FactoryDefault();
 
 $app_config_file = APP_PATH . '/config.ini';
 $app_config = new \Phalcon\Config\Adapter\Ini($app_config_file);
-$di->set('conf', $app_config);
+$config->merge($app_config);
+
+$di->set('config', function() use ($config) {
+    return $config;
+});
 
 /**
  * The URL component is used to generate all kind of urls in the application
  */
-$di->set('url', function () use ($app_config) 
+$di->set('url', function () use ($config) 
 {
     $url = new UrlResolver();
-    $url->setBaseUri($app_config->app->host);
+    $url->setBaseUri($config->app->host);
 
     return $url;
 }, true);
@@ -65,9 +69,9 @@ $di->setShared('view', function () use ($config) {
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
-$di->set('db', function () use ($app_config) 
+$di->set('db', function () use ($config) 
 {
-    return new DbAdapter($app_config->database->toArray());
+    return new DbAdapter($config->database->toArray());
 });
 
 /**

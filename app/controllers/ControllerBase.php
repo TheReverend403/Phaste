@@ -6,6 +6,6 @@ class ControllerBase extends Controller
 {
     protected function initialize()
     {
-        $this->tag->setTitle($this->conf->app->name . ' | ');
+        $this->tag->setTitle($this->config->app->name . ' | ');
     }
 }

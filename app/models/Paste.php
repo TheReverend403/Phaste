@@ -105,4 +105,9 @@ class Paste extends \Phalcon\Mvc\Model
 
         return $this->validationHasFailed() != true;
     }
+
+    public function initialize()
+    {
+        $this->skipAttributes(array('id', 'created'));
+    }
 }
