@@ -10,6 +10,7 @@ class NewController extends \Phalcon\Mvc\Controller
         $this->view->disable();
 
         // Generate random slugs until we find one not in use.
+        // This will cause one additional SQL query at minimum when creating a paste.
         $slug;
         do
         {
@@ -19,6 +20,9 @@ class NewController extends \Phalcon\Mvc\Controller
 
         $paste = new Paste();
         $paste->slug = $slug;
+        // No sanitisation needed if we accept anything at all to mean true and nothing to mean false.
+        // Also fixes a bug where browsers will send "on" if no explicit value is selected.
+        $paste->private = $this->request->getPost("private") != null ? 1 : 0;
         $paste->creator_ipv4 = $this->request->getClientAddress();
 
         if (!$paste->save($this->request->getPost(), array('content'))) 

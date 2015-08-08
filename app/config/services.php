@@ -123,8 +123,6 @@ $di->set('dispatcher', function()
             ));
             return false;
         }
-
-        return false;
     });
 
     $dispatcher = new \Phalcon\Mvc\Dispatcher();
