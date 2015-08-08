@@ -21,7 +21,7 @@ class NewController extends \Phalcon\Mvc\Controller
         $paste = new Paste();
         $paste->slug = $slug;
         // No sanitisation needed if we accept anything at all to mean true and nothing to mean false.
-        // Also fixes a bug where browsers will send "on" if no explicit value is selected.
+        // Also addresses http://stackoverflow.com/a/14067312
         $paste->private = $this->request->getPost("private") != null ? 1 : 0;
         $paste->creator_ipv4 = $this->request->getClientAddress();
 
