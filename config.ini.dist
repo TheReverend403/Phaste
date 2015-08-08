@@ -21,3 +21,8 @@ highlight_theme = github
 [piwik]
 host = piwik.example.com
 siteid = 1
+
+; Don't touch these settings unless you're working on the code, 
+; they're not for general use.
+[dev]
+debug = false

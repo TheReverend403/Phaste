@@ -51,7 +51,8 @@ $di->setShared('view', function () use ($config) {
 
             $volt->setOptions(array(
                 'compiledPath' => $config->application->cacheDir,
-                'compiledSeparator' => '_'
+                'compiledSeparator' => '_',
+                'compiledAlways' => $config->dev->debug
             ));
 
             return $volt;

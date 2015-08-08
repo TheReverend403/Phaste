@@ -13,8 +13,7 @@ $config = new \Phalcon\Config(array(
         'viewsDir'       => APP_PATH . '/app/views/',
         'pluginsDir'     => APP_PATH . '/app/plugins/',
         'libraryDir'     => APP_PATH . '/app/library/',
-        'cacheDir'       => APP_PATH . '/app/cache/',
-        'baseUri'       => $app_config->app->host,
+        'cacheDir'       => APP_PATH . '/app/cache/'
     )
 ));
 
