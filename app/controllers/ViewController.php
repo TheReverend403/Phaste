@@ -11,7 +11,7 @@ class ViewController extends ControllerBase
         parent::initialize();
 
         $id = $this->dispatcher->getParam("id");
-        $this->paste = Paste::findFirstByid($id, array(
+        $this->paste = Paste::findFirstById($id, array(
             'cache' => array(
                 'lifetime' => 3600,
                 'key' => $id
