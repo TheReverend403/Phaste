@@ -55,6 +55,8 @@ $di->setShared('view', function () use ($config) {
                 'compiledAlways' => $config->dev->debug
             ));
 
+            $compiler = $volt->getCompiler();
+            $compiler->addFunction('strtotime', 'strtotime');
             return $volt;
         },
         '.phtml' => 'Phalcon\Mvc\View\Engine\Php'

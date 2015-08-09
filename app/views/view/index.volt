@@ -10,10 +10,10 @@
 {% block content %}
 <div class="page-header">
 	<p>{{ link_to('v/' ~ paste.id ~ '/raw', 'View Raw') }}</p>
-	{% if paste.lang != 'auto' and paste.lang != 'none' %}
+	{% if paste.lang != 'auto' %}
 		<p>Language: {{ config.highlight_languages[paste.lang] }}</p>
 	{% endif %}
-	<p>Created: {{ paste.created_date }}</p>
+	<p>Created: {{ date('r', strtotime(paste.created_date)) }}</p>
 </div>
 
 {% if paste.lang != 'auto' and paste.lang != 'none' %}
