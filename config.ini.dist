@@ -6,24 +6,32 @@ host = localhost
 username = root
 password = myverysecurepassword
 dbname = phaste
+; Don't touch this unless you have a specific reason and you know what it does
 charset = utf8
 
 [app]
 ; Must be set to the root of your app with trailing slash
 host = https://paste.example.com/
+
+; Site name that will be displayed in the title and navbar
 name = Phaste
+
 ; https://bootswatch.com/
 ; Set to 'default' to use default bootstrap
 site_theme = yeti
+
 ; https://highlightjs.org/static/demo/
 highlight_theme = github
+
 ; Timezone to use for parsing paste timestamps
 ; Accepts values from https://secure.php.net/manual/en/timezones.php
 ; Set to 'system' to use the PHP default timezone
 timezone = UTC
 
 [piwik]
+; Hostname of your Piwik instance
 host = piwik.example.com
+; The site ID set for this site in your Piwik code
 siteid = 1
 
 ; Don't touch these settings unless you're working on the code,
