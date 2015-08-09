@@ -2,7 +2,7 @@
 
 use Phalcon\Http\Response;
 
-class ViewController extends ControllerBase 
+class ViewController extends ControllerBase
 {
     public $paste;
     // Set up data here since both actions use the same data.
@@ -13,7 +13,7 @@ class ViewController extends ControllerBase
         $id = $this->dispatcher->getParam("id");
         $this->paste = Paste::findFirstByid($id, array(
             'cache' => array(
-                'lifetime' => 3600, 
+                'lifetime' => 3600,
                 'key' => $id
             )
         ));
@@ -21,9 +21,9 @@ class ViewController extends ControllerBase
         if (!$this->paste)
         {
             return $this->dispatcher->forward(array(
-                'controller' => 'error', 
+                'controller' => 'error',
                 'action' => 'e404'
-            )); 
+            ));
         }
     }
 

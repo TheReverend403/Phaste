@@ -26,7 +26,7 @@ $di->set('config', function() use ($config) {
 /**
  * The URL component is used to generate all kind of urls in the application
  */
-$di->set('url', function () use ($config) 
+$di->set('url', function () use ($config)
 {
     $url = new UrlResolver();
     $url->setBaseUri($config->app->host);
@@ -44,7 +44,7 @@ $di->setShared('view', function () use ($config) {
     $view->setViewsDir($config->application->viewsDir);
 
     $view->registerEngines(array(
-        '.volt' => function ($view, $di) use ($config) 
+        '.volt' => function ($view, $di) use ($config)
         {
 
             $volt = new VoltEngine($view, $di);
@@ -68,7 +68,7 @@ $di->setShared('view', function () use ($config) {
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
-$di->set('db', function () use ($config) 
+$di->set('db', function () use ($config)
 {
     return new DbAdapter($config->database->toArray());
 });
@@ -76,7 +76,7 @@ $di->set('db', function () use ($config)
 /**
  * If the configuration specify the use of metadata adapter use it or use memory otherwise
  */
-$di->set('modelsMetadata', function () 
+$di->set('modelsMetadata', function ()
 {
     return new MetaDataAdapter();
 });
@@ -84,7 +84,7 @@ $di->set('modelsMetadata', function ()
 /**
  * Start the session the first time some component request the session service
  */
-$di->setShared('session', function () 
+$di->setShared('session', function ()
 {
     $session = new SessionAdapter();
     $session->start();
@@ -95,13 +95,13 @@ $di->setShared('session', function ()
 /**
 * add routing capabilities
 */
-$di->set('router', function () 
+$di->set('router', function ()
 {
     require 'routes.php';
     return $router;
 });
 
-$di->set('flash', function () 
+$di->set('flash', function ()
 {
     $flash = new FlashSession(array(
         'error'   => 'alert alert-danger',
@@ -112,13 +112,13 @@ $di->set('flash', function ()
     return $flash;
 });
 
-$di->set('dispatcher', function() 
+$di->set('dispatcher', function()
 {
     $eventsManager = new \Phalcon\Events\Manager();
 
-    $eventsManager->attach("dispatch:beforeException", function($event, $dispatcher, $exception) 
+    $eventsManager->attach("dispatch:beforeException", function($event, $dispatcher, $exception)
     {
-        if ($exception instanceof \Phalcon\Mvc\Dispatcher\Exception) 
+        if ($exception instanceof \Phalcon\Mvc\Dispatcher\Exception)
         {
             $dispatcher->forward(array(
                 'controller' => 'error',
@@ -136,7 +136,7 @@ $di->set('dispatcher', function()
 
 }, true);
 
-$di->set('modelsCache', function () 
+$di->set('modelsCache', function ()
 {
     $frontCache = new FrontendData(array(
         "lifetime" => 172800

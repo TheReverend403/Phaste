@@ -14,7 +14,7 @@ class NewController extends \Phalcon\Mvc\Controller
         $id;
         do
         {
-            $id = Text::random(Text::RANDOM_ALNUM, rand(5,13));   
+            $id = Text::random(Text::RANDOM_ALNUM, rand(5,13));
         }
         while (Paste::findFirstByid($id));
 
