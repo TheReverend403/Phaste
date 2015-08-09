@@ -20,7 +20,7 @@ highlight_theme = github
 ; Timezone to use for parsing paste timestamps
 ; Accepts values from https://secure.php.net/manual/en/timezones.php
 ; Set to 'system' to use the PHP default timezone
-timezone = system
+timezone = UTC
 
 [piwik]
 host = piwik.example.com
