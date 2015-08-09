@@ -4,7 +4,7 @@ Phaste
 
 God what a great name. Probably.
 
-Demo available at https://paste.foxdev.co
+Demo available at https://pste.pw
 
 Anyway, how to install...
 
