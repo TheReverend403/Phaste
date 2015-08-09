@@ -110,7 +110,7 @@ class Paste extends \Phalcon\Mvc\Model
             array(
                 "field"   => "lang",
                 "message" => "Invalid language selected!",
-                'domain' => array_keys(array($this->getDi()->getConfig()->highlight_languages))
+                'domain' => array_keys($this->getDi()->getConfig()->highlight_languages->toArray())
             )
         ));
 
