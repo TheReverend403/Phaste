@@ -2,6 +2,7 @@
 
 use Phalcon\Mvc\Model\Validator\Uniqueness;
 use Phalcon\Mvc\Model\Validator\StringLength;
+use Phalcon\Mvc\Model\Validator\Inclusionin;
 
 class Paste extends \Phalcon\Mvc\Model
 {
@@ -102,6 +103,14 @@ class Paste extends \Phalcon\Mvc\Model
                 "min"     => 1,
                 "field"   => "content",
                 "messageMinimum" => "Paste cannot be empty!"
+            )
+        ));
+
+        $this->validate(new InclusionIn(
+            array(
+                "field"   => "lang",
+                "message" => "Invalid language selected!",
+                'domain' => array_keys(array($this->getDi()->getConfig()->highlight_languages))
             )
         ));
 

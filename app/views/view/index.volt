@@ -9,11 +9,18 @@
 
 {% block content %}
 <div class="page-header">
-    <p>{{ url('v/') }}<span class="text-warning">{{ paste.id }}</span></p>
-    {{ link_to('v/' ~ paste.id ~ '/raw', 'View Raw') }}
+	<p>{{ link_to('v/' ~ paste.id ~ '/raw', 'View Raw') }}</p>
+	{% if paste.lang != 'auto' and paste.lang != 'none' %}
+		<p>Language: {{ config.highlight_languages[paste.lang] }}</p>
+	{% endif %}
+	<p>Created: {{ paste.created_date }}</p>
 </div>
 
-<pre><code>{{ paste.content|e }}</code></pre>
+{% if paste.lang != 'auto' and paste.lang != 'none' %}
+	<pre><code class="{{ paste.lang }}">{{ paste.content|e }}</code></pre>
+{% else %}
+	<pre><code>{{ paste.content|e }}</code></pre>
+{% endif %}
 {% endblock %}
 
 {% block js %}

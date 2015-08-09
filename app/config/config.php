@@ -14,7 +14,32 @@ $config = new \Phalcon\Config(array(
         'pluginsDir'     => APP_PATH . '/app/plugins/',
         'libraryDir'     => APP_PATH . '/app/library/',
         'cacheDir'       => APP_PATH . '/app/cache/'
-    )
+    ),
+    'highlight_languages' => array(
+		'auto' => 'Autodetect',
+		'apache' => 'Apache',
+		'bash' => 'Bash',
+		'coffeescript' => 'CoffeeScript',
+		'cpp' => 'C++',
+		'cs' => 'C#',
+		'css' => 'CSS',
+		'diff' => 'Diff',
+		'json' => 'JSON',
+		'xml' => 'HTML/XML',
+		'http' => 'HTTP',
+		'ini' => 'INI',
+		'java' => 'Java',
+		'javascript' => 'JavaScript',
+		'makefile' => 'Makefile',
+		'markdown' => 'Markdown',
+		'nginx' => 'Nginx',
+		'objectivec' => 'Objective-C',
+		'php'  => 'PHP',
+		'none' => 'Plain Text',
+		'python' => 'Python',
+		'ruby' => 'Ruby',
+		'sql' => 'SQL'
+	)
 ));
 
 $config->merge($app_config);
