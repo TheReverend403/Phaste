@@ -21,7 +21,7 @@ class NewController extends \Phalcon\Mvc\Controller
         $paste = new Paste();
         $paste->id = $id;
         $paste->content = $this->request->getPost("content");
-        $paste->lang = $this->request->getPost("lang");
+        $paste->lang = $this->request->getPost("lang") == null ? "auto" : $this->request->getPost("lang");
         // No sanitisation needed if we accept anything at all to mean true and nothing to mean false.
         // Also addresses http://stackoverflow.com/a/14067312
         $paste->private = $this->request->getPost("private") == null ? 0 : 1;
