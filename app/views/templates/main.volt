@@ -15,7 +15,7 @@
         {{ get_title() }}
     </head>
     <body>
-        {% include "partials/navbar.volt" %}
+        {{ partial('partials/navbar') }}
         <div class="container">
             {% block content %}
             {% endblock %}

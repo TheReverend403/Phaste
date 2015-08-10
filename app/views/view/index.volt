@@ -25,7 +25,7 @@
 
 {% block js %}
 {% if paste.private == 0 %}
-	{% include "partials/piwik.volt" %}
+	{{ partial('partials/piwik') }}
 {% endif %}
 {% if paste.lang != 'none' %}
 	{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js') }}
