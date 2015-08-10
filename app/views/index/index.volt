@@ -12,7 +12,7 @@
         </button>
     </div>
     <div class="collapse" id="options">
-		{{ partial('partials/options') }}
+		{% include "partials/options.volt" %}
     </div>
     <div class="form-group">
         {{ text_area("content", 'rows': 30, 'class': "form-control", 'placeholder': "Enter paste content...", 'autofocus': true) }}
@@ -26,5 +26,5 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 </script>
-{{ partial('partials/piwik') }}
+{% include "partials/piwik.volt" %}
 {% endblock %}
