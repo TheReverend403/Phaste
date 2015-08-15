@@ -126,6 +126,12 @@ $di->set('dispatcher', function()
             ));
             return false;
         }
+
+        $dispatcher->forward(array(
+            'controller' => 'error',
+            'action' => 'e500'
+        ));
+        return false;
     });
 
     $dispatcher = new \Phalcon\Mvc\Dispatcher();
