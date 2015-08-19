@@ -5,32 +5,31 @@
 
 /* https://jsfiddle.net/tovic/AbpRD/ */
 pre {
-  background-color:#eee;
-  overflow:auto;
-  margin:0 0 1em;
-  padding:.5em 1em;
+  background-color: #eee;
+  overflow: auto;
+  margin: 0 0 1em;
+  padding: .5em 1em;
 }
 
 pre code,
 pre .line-number {
-  font:normal normal "Droid Sans Mono","Courier New",Courier,Monospace;
-  color:black;
-  display:block;
+  font-family: "Droid Sans Mono", Monospace;
+  display: block;
 }
 
 pre .line-number {
-  float:left;
-  margin:0 1em 0 -1em;
-  border-right:1px solid;
-  text-align:right;
+  float: left;
+  margin: 0 1em 0 -1em;
+  border-right: 1px solid;
+  text-align: right;
 }
 
 pre .line-number span {
-  display:block;
-  padding:0 .5em 0 1em;
+  display: block;
+  padding: 0 .5em 0 1em;
 }
 
 pre .cl {
-  display:block;
-  clear:both;
+  display: block;
+  clear: both;
 }
