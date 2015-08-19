@@ -3,8 +3,8 @@
 {% block stylesheets %}
 {% if paste.lang != 'none' %}
 	{{ stylesheet_link('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/' ~ config.app.highlight_theme ~ '.min.css') }}
-	{{ stylesheet_link('css/style.css') }}
 {% endif %}
+{{ stylesheet_link('css/style.css') }}
 {% endblock %}
 
 {% block content %}
