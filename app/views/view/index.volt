@@ -30,6 +30,6 @@
 {% if paste.lang != 'none' %}
 	{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js') }}
 	<script>hljs.initHighlightingOnLoad();</script>
-	{{ javascript_include('js/linenumbers.js') }}
 {% endif %}
+{{ javascript_include('js/linenumbers.js') }}
 {% endblock %}
