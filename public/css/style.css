@@ -17,6 +17,7 @@ pre .line-number {
   display: block;
   white-space: pre;
   overflow: auto;
+  word-wrap: normal;
 }
 
 pre .line-number {
