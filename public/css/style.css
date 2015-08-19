@@ -26,9 +26,14 @@ pre .line-number {
   text-align: right;
 }
 
+pre .line-number span:hover {
+	background-color: lightgrey;
+}
+
 pre .line-number span {
   display: block;
   padding: 0 .5em 0 1em;
+  cursor: pointer;
 }
 
 pre .cl {
