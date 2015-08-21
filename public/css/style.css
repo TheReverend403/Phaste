@@ -44,4 +44,8 @@ pre .cl {
 
 .gh-forkme {
 	z-index: 9999;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
 }
