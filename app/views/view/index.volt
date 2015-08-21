@@ -24,11 +24,14 @@
 {% endblock %}
 
 {% block js %}
+
 {% if paste.private == 0 %}
 	{% include "partials/piwik.volt" %}
 {% endif %}
 {% if paste.lang != 'none' %}
 	{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js') }}
+	{# Load extra languages if one is used. #}
+	{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/languages/' ~ paste.lang ~ '.min.js') }}
 	<script>hljs.initHighlightingOnLoad();</script>
 {% endif %}
 {{ javascript_include('js/linenumbers.js') }}

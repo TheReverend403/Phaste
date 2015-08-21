@@ -15,30 +15,46 @@ $config = new \Phalcon\Config(array(
         'libraryDir'     => APP_PATH . '/app/library/',
         'cacheDir'       => APP_PATH . '/app/cache/'
     ),
+    // Add anything here as long as it's listed in https://cdnjs.com/libraries/highlight.js/
     'highlight_languages' => array(
 		'auto' => 'Autodetect',
+		'armasm' => 'ARM ASM',
 		'apache' => 'Apache',
 		'bash' => 'Bash',
 		'coffeescript' => 'CoffeeScript',
+		'cmake' => 'CMake',
 		'cpp' => 'C++',
 		'cs' => 'C#',
 		'css' => 'CSS',
 		'diff' => 'Diff',
+		'dns' => 'DNS Zone File',
+		'erlang' => 'Erlang',
+		'fortran' => 'Fortran',
+		'haskell' => 'Haskell',
 		'json' => 'JSON',
 		'xml' => 'HTML/XML',
 		'http' => 'HTTP',
 		'ini' => 'INI',
 		'java' => 'Java',
 		'javascript' => 'JavaScript',
+		'kotlin' => 'Kotlin',
+		'lua' => 'Lua',
 		'makefile' => 'Makefile',
 		'markdown' => 'Markdown',
+		'matlab' => 'Matlab',
 		'nginx' => 'Nginx',
 		'objectivec' => 'Objective-C',
+		'perl' => 'Perl',
 		'php'  => 'PHP',
 		'none' => 'Plain Text',
 		'python' => 'Python',
 		'ruby' => 'Ruby',
-		'sql' => 'SQL'
+		'rust' => 'Rust',
+		'sql' => 'SQL',
+		'tcl' => 'Tcl',
+		'vbnet' => 'VB.net',
+		'vim' => 'Vim',
+		'x86asm' => 'x86 ASM'
 	)
 ));
 
