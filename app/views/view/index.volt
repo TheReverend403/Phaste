@@ -44,7 +44,9 @@
 {% if paste.lang != 'none' %}
 	{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js') }}
 	{# Load extra languages if one is used. #}
-	{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/languages/' ~ paste.lang ~ '.min.js') }}
+	{% if paste.lang != 'auto' %}
+		{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/languages/' ~ paste.lang ~ '.min.js') }}
+	{% endif %}
 	<script>hljs.initHighlightingOnLoad();</script>
 {% endif %}
 {% endblock %}
