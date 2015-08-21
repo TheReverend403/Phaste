@@ -19,10 +19,6 @@
     </div>
 {{ endform() }}
 
-{% if config.app.github_ribbon %}
-    {% include "partials/github_ribbon.volt" %}
-{% endif %}
-
 {% endblock %}
 
 {% block js %}

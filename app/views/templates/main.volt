@@ -21,6 +21,11 @@
             {% block content %}
             {% endblock %}
         </div>
+
+        {% if config.app.github_ribbon %}
+            {% include "partials/github_ribbon.volt" %}
+        {% endif %}
+
         {{ javascript_include('//code.jquery.com/jquery-1.11.3.min.js') }}
         {{ javascript_include('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js') }}
         {% block js %}
