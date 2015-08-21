@@ -17,7 +17,7 @@
 </div>
 
 <?php
-	$content_split = explode("\n", rtrim($paste->content));
+	$content_split = explode("\n", $paste->content);
 ?>
 
 <pre>
