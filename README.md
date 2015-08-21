@@ -26,3 +26,7 @@ It is recommended to use https://github.com/phalcon/vagrant for development to e
 ### Clients
 
 [PstePy](https://github.com/FoxDev/PstePy) (Python, CLI)
+
+### Support
+
+[#foxdev on irc.seion.us](https://kiwiirc.com/client/fox.seion.us/foxdev)
