@@ -22,3 +22,7 @@ GitLab: https://gitlab.notoriousdev.com/foxdev/Paste
 ### For developers...
 
 It is recommended to use https://github.com/phalcon/vagrant for development to ease the process of setting up a development environment, and to ensure a consistent environment when debugging.
+
+### Clients
+
+[PstePy](https://github.com/FoxDev/PstePy) (Python, CLI)
