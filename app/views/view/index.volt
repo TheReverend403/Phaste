@@ -16,11 +16,24 @@
 	<p>Created: {{ date('r', strtotime(paste.created_date)) }}</p>
 </div>
 
+<?php
+	$content_split = explode("\n", rtrim($paste->content));
+?>
+
+<pre>
+<span class="line-number">
+	{% for line in content_split %}
+		<span id="L{{ loop.index }}" onClick="document.location.hash = this.id">{{ loop.index }}</span>
+	{% endfor %}
+</span>
+
 {% if paste.lang != 'auto' and paste.lang != 'none' %}
-	<pre><code class="{{ paste.lang }}">{{ paste.content|e }}</code></pre>
+	<code class="{{ paste.lang }}">{{ paste.content|e }}</code>
 {% else %}
-	<pre><code>{{ paste.content|e }}</code></pre>
+	<code>{{ paste.content|e }}</code>
 {% endif %}
+<span class="cl"></span>
+</pre>
 {% endblock %}
 
 {% block js %}
@@ -34,5 +47,4 @@
 	{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/languages/' ~ paste.lang ~ '.min.js') }}
 	<script>hljs.initHighlightingOnLoad();</script>
 {% endif %}
-{{ javascript_include('js/linenumbers.js') }}
 {% endblock %}
