@@ -6,6 +6,7 @@
 /* https://jsfiddle.net/tovic/AbpRD/ */
 pre {
   background-color: #eee;
+  overflow: auto;
   margin: 0 0 1em;
   padding: .5em 1em;
   white-space: nowrap;
@@ -13,6 +14,7 @@ pre {
 
 pre code {
 	white-space: pre;
+	overflow: auto;
 }
 
 pre code,
