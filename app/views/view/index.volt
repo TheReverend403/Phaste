@@ -21,18 +21,18 @@
 ?>
 
 <pre>
-<span class="line-number">
-	{% for line in content_split %}
-		<span id="L{{ loop.index }}" onClick="document.location.hash = this.id">{{ loop.index }}</span>
-	{% endfor %}
-</span>
+	<span class="line-number">
+		{% for line in content_split %}
+			<span id="L{{ loop.index }}" onClick="document.location.hash = this.id">{{ loop.index }}</span>
+		{% endfor %}
+	</span>
 
-{% if paste.lang != 'auto' and paste.lang != 'none' %}
-	<code class="{{ paste.lang }}">{{ paste.content|e }}</code>
-{% else %}
-	<code>{{ paste.content|e }}</code>
-{% endif %}
-<span class="cl"></span>
+	{% if paste.lang != 'auto' and paste.lang != 'none' %}
+		<code class="{{ paste.lang }}">{{ paste.content|e }}</code>
+	{% else %}
+		<code>{{ paste.content|e }}</code>
+	{% endif %}
+	<span class="cl"></span>
 </pre>
 {% endblock %}
 
