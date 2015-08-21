@@ -6,7 +6,7 @@
 CREATE TABLE `pastes` (
 	-- AKA slug
 	`id` varchar(13) NOT NULL,
-	`content` text,
+	`content` mediumtext,
 	`lang` varchar(10) NOT NULL DEFAULT 'auto',
 	`private` tinyint(1) NOT NULL DEFAULT 0,
 	`owner_id` int(10) UNSIGNED NOT NULL DEFAULT 0, --  References users.id for cascade and listing user's pastes
