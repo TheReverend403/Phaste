@@ -42,6 +42,10 @@ pre .line-number span {
   cursor: pointer;
 }
 
+pre .line-number span:target {
+	background-color: orange;
+}
+
 pre .cl {
   display: block;
   clear: both;
