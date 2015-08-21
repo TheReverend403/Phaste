@@ -9,10 +9,5 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse" id="navcollapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li>{{ link_to('https://gitlab.notoriousdev.com/foxdev/Paste/', 'Source Code', 'target': "_blank", false) }}</li>
-            </ul>
-        </div>
     </div>
 </nav>

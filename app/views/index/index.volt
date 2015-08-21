@@ -18,6 +18,11 @@
         {{ text_area("content", 'rows': 30, 'class': "form-control", 'placeholder': "Enter paste content...", 'autofocus': true) }}
     </div>
 {{ endform() }}
+
+{% if config.app.github_ribbon %}
+    {% include "partials/github_ribbon.volt" %}
+{% endif %}
+
 {% endblock %}
 
 {% block js %}

@@ -9,6 +9,7 @@
         {% if config.app.site_theme != 'default' %}
             {{ stylesheet_link('//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/' ~ config.app.site_theme ~ '/bootstrap.min.css') }}
         {% endif %}
+        {{ stylesheet_link('css/style.css') }}
 
         {% block stylesheets %}
         {% endblock %}

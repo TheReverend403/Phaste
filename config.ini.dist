@@ -28,6 +28,9 @@ highlight_theme = github
 ; Set to 'system' to use the PHP default timezone
 timezone = UTC
 
+; Add a "fork me on github" ribbon in the top right corner of pages?
+github_ribbon = true
+
 [piwik]
 ; Hostname of your Piwik instance
 host = piwik.example.com
