@@ -16,9 +16,7 @@
 	<p>Created: {{ date('r', strtotime(paste.created_date)) }}</p>
 </div>
 
-<?php
-	$content_split = explode("\n", $paste->content);
-?>
+<?php $content_split = explode("\n", $paste->content); ?>
 
 <pre>
 	<span class="line-number">
