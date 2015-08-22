@@ -47,10 +47,10 @@
 {% if paste.lang != 'none' %}
 	{% if paste.lang == 'auto' %}
 		{# Autodetect using all available highlight languages #}
-		{{ javascript_include('js/highlightfull.min.js') }}
+		{{ javascript_include('js/highlight/highlightfull.min.js') }}
 	{% else %}
 		{# If a specific language is chosen, only load that. #}
-		{{ javascript_include('js/highlighttiny.min.js') }}
+		{{ javascript_include('js/highlight/highlighttiny.min.js') }}
 		{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/languages/' ~ paste.lang ~ '.min.js') }}
 	{% endif %}
 	<script>hljs.initHighlightingOnLoad();</script>
