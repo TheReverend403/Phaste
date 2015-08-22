@@ -24,7 +24,9 @@
 <pre>
 	<span class="line-number">
 		{% for line in content_split %}
-			<span id="L{{ loop.index }}"><a href="#L{{ loop.index }}">{{ loop.index }}</a></span>
+			<span id="L{{ loop.index }}" onClick="document.location.hash = this.id">
+				<a href="#L{{ loop.index }}">{{ loop.index }}</a>
+			</span>
 		{% endfor %}
 	</span>
 
