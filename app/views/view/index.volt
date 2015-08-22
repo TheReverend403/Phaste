@@ -22,13 +22,13 @@
 	<?php $content_split = explode("\n", $paste->content); ?>
 
 	<pre>
-		<div class="line-number text-muted">
+		<span class="line-number text-muted">
 			{% for line in content_split %}
 				<span id="L{{ loop.index }}" onClick="document.location.hash = this.id">
 					<a class="unlink" href="#L{{ loop.index }}">{{ loop.index }}</a>
 				</span>
 			{% endfor %}
-		</div>
+		</span>
 
 		{% if paste.lang != 'auto' and paste.lang != 'none' %}
 			<code class="{{ paste.lang }}">{{ paste.content|e }}</code>
