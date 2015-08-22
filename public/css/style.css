@@ -33,7 +33,7 @@ pre .line-number {
 
 pre .line-number {
 	float: left;
-	margin: 0 .5em 0 -1em;
+	margin: 0 1em 0 -1em;
 	border-right: 1px solid;
 	text-align: right;
 	white-space: nowrap;
