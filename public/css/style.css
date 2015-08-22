@@ -43,7 +43,7 @@ pre .line-number span {
 }
 
 pre .line-number span:target {
-	background-color: orange;
+	background-color: lightgreen;
 }
 
 pre .cl {
