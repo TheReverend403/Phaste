@@ -28,7 +28,8 @@ function format_bytes($size, $precision = 2)
  */
 $di = new FactoryDefault();
 
-$di->set('config', function() use ($config) {
+$di->set('config', function() use ($config)
+{
     return $config;
 });
 
@@ -46,7 +47,8 @@ $di->set('url', function () use ($config)
 /**
  * Setting up the view component
  */
-$di->setShared('view', function () use ($config) {
+$di->setShared('view', function () use ($config)
+{
 
     $view = new View();
 
