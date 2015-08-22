@@ -4,19 +4,19 @@
 }
 
 a.unlink {
-  color: inherit;
+	color: inherit;
 }
 a.unlink:hover {
-  color: inherit;
+	color: inherit;
 }
 
 /* https://jsfiddle.net/tovic/AbpRD/ */
 pre {
-  background-color: #eee;
-  overflow: auto;
-  margin: 0 0 1em;
-  padding: .5em 1em;
-  white-space: nowrap;
+	background-color: #eee;
+	overflow: auto;
+	margin: 0 0 1em;
+	padding: .5em 1em;
+	white-space: nowrap;
 }
 
 pre code {
@@ -26,17 +26,17 @@ pre code {
 
 pre code,
 pre .line-number {
-  font-family: "Droid Sans Mono", Monospace;
-  display: block;
-  word-wrap: normal;
+	font-family: "Droid Sans Mono", Monospace;
+	display: block;
+	word-wrap: normal;
 }
 
 pre .line-number {
-  float: left;
-  margin: 0 1em 0 -1em;
-  border-right: 1px solid;
-  text-align: right;
-  white-space: nowrap;
+	float: left;
+	margin: 0 .5em 0 -1em;
+	border-right: 1px solid;
+	text-align: right;
+	white-space: nowrap;
 }
 
 pre .line-number span:hover {
@@ -44,9 +44,9 @@ pre .line-number span:hover {
 }
 
 pre .line-number span {
-  display: block;
-  padding: 0 .5em 0 1em;
-  cursor: pointer;
+	display: block;
+	cursor: pointer;
+	padding: 0 .5em 0 .5em;
 }
 
 pre .line-number span:target {
@@ -54,8 +54,8 @@ pre .line-number span:target {
 }
 
 pre .cl {
-  display: block;
-  clear: both;
+	display: block;
+	clear: both;
 }
 
 .gh-forkme {
