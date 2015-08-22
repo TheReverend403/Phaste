@@ -7,7 +7,7 @@
 {{ form(url('new'), "method": "post") }}
     <div class="form-group">
         {{ submit_button("Submit", 'class': "btn btn-success") }}
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#options" aria-expanded="false" aria-controls="options-collapse">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#options" aria-expanded="false" aria-controls="options">
           Options
         </button>
     </div>
@@ -15,7 +15,7 @@
 		{% include "partials/options.volt" %}
     </div>
     <div class="form-group">
-        {{ text_area("content", 'rows': 30, 'class': "form-control", 'placeholder': "Enter paste content...", 'autofocus': true) }}
+        {{ text_area("content", 'rows': 30, 'class': "form-control", 'placeholder': "Enter paste content...", 'autofocus': "autofocus") }}
     </div>
 {{ endform() }}
 
