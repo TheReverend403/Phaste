@@ -49,6 +49,11 @@ $di->setShared('view', function () use ($config) {
 
             $volt = new VoltEngine($view, $di);
 
+            if ($config->dev->debug)
+            {
+                array_map('unlink', glob($config->application->cacheDir . '*.php'));
+            }
+
             $volt->setOptions(array(
                 'compiledPath' => $config->application->cacheDir,
                 'compiledSeparator' => '_',
