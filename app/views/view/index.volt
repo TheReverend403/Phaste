@@ -25,7 +25,7 @@
 	<span class="line-number text-muted">
 		{% for line in content_split %}
 			<span id="L{{ loop.index }}" onClick="document.location.hash = this.id">
-				<a class="unlink"href="#L{{ loop.index }}">{{ loop.index }}</a>
+				<a class="unlink" href="#L{{ loop.index }}">{{ loop.index }}</a>
 			</span>
 		{% endfor %}
 	</span>
