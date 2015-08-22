@@ -1,6 +1,5 @@
-.hljs {
-    background: none;
-    padding: 0;
+code {
+	padding: 0 !important;
 }
 
 a.unlink {
@@ -12,7 +11,6 @@ a.unlink:hover {
 
 /* https://jsfiddle.net/tovic/AbpRD/ */
 pre {
-	background-color: #eee;
 	overflow: auto;
 	margin: 0 0 1em;
 	padding: .5em 1em;
@@ -46,7 +44,7 @@ pre .line-number span:hover {
 pre .line-number span {
 	display: block;
 	cursor: pointer;
-	padding: 0 .5em 0 .5em;
+	padding: 0 .5em 0 1em;
 }
 
 pre .line-number span:target {

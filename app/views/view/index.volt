@@ -21,7 +21,7 @@
 
 	<?php $content_split = explode("\n", $paste->content); ?>
 
-	<pre>
+	<pre class="hljs">
 		<span class="line-number text-muted">
 			{% for line in content_split %}
 				<span id="L{{ loop.index }}" onClick="document.location.hash = this.id">
