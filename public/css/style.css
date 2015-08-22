@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+a.unlink {
+  color: inherit;
+}
+a.unlink:hover {
+  color: inherit;
+}
+
 /* https://jsfiddle.net/tovic/AbpRD/ */
 pre {
   background-color: #eee;
