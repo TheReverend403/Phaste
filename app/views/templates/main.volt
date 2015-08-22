@@ -2,7 +2,9 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The simplest, most beautiful privacy respecting pastebin-like site.">
+        <meta name="keywords" content="phaste,paste,pastebin,foxdev,opensource,open-source,open,source,php,phalcon,mysql,bootstrap">
         <link rel="shortcut icon" type="image/ico" href="{{ static_url('img/favicon.ico') }}"/>
         {{ stylesheet_link('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') }}
 
