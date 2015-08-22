@@ -14,6 +14,15 @@ use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Flash\Session as FlashSession;
 
+// https://stackoverflow.com/a/2510540
+function format_bytes($size, $precision = 2)
+{
+    $base = log($size, 1024);
+    $suffixes = array('', 'K', 'M', 'G', 'T');
+
+    return round(pow(1024, $base - floor($base)), $precision) . $suffixes[floor($base)];
+}
+
 /**
  * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
  */
@@ -62,6 +71,7 @@ $di->setShared('view', function () use ($config) {
 
             $compiler = $volt->getCompiler();
             $compiler->addFunction('strtotime', 'strtotime');
+            $compiler->addFunction('fmt_bytes', 'format_bytes');
             return $volt;
         },
         '.phtml' => 'Phalcon\Mvc\View\Engine\Php'
