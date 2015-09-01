@@ -16,6 +16,9 @@ host = https://paste.example.com/
 ; Site name that will be displayed in the title and navbar
 name = Phaste
 
+; Site description that will be displayed in meta tags for search engines
+description = An instance of Phaste (https://github.com/FoxDev/Phaste)
+
 ; https://bootswatch.com/
 ; Set to 'default' to use default bootstrap
 site_theme = yeti
