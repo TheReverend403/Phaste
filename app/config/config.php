@@ -18,6 +18,7 @@ $config = new \Phalcon\Config(array(
     // Add anything here as long as it's listed in https://cdnjs.com/libraries/highlight.js/
     'highlight_languages' => array(
 		'auto' => 'Autodetect',
+		'accesslog' => 'Access Log',
 		'armasm' => 'ARM ASM',
 		'apache' => 'Apache',
 		'bash' => 'Bash',
