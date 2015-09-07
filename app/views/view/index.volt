@@ -12,7 +12,7 @@
 		<p>{{ link_to('v/' ~ paste.id ~ '/raw', 'View Raw') }}</p>
 		<ul class="list-inline">
 			{% if paste.lang != 'auto' %}
-				<li><span class="text-muted">Language: </span>{{ config.highlight_languages[paste.lang] }}</li>
+				<li><span class="text-muted">Syntax: </span>{{ config.highlight_languages[paste.lang] }}</li>
 			{% endif %}
 			<li><span class="text-muted">Created: </span>{{ date('r', strtotime(paste.created_date)) }}</li>
 			<li><span class="text-muted">Size: </span>{{ fmt_bytes(paste.size_bytes) }}</li>
