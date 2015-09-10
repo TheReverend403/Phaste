@@ -5,9 +5,9 @@
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="//{{ conf.piwik.host }}/";
+    var u="//{{ config.piwik.host }}/";
     _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', {{ conf.piwik.siteid }}]);
+    _paq.push(['setSiteId', {{ config.piwik.siteid }}]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
