@@ -2,7 +2,7 @@
 
 {% block stylesheets %}
 	{% if paste.lang != 'none' %}
-		{{ stylesheet_link('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/' ~ config.app.highlight_theme ~ '.min.css') }}
+		{{ stylesheet_link('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/' ~ config.app.highlight_theme ~ '.min.css') }}
 	{% endif %}
 	{{ stylesheet_link('css/style.css') }}
 {% endblock %}
@@ -50,7 +50,7 @@
 		{% else %}
 			{# If a specific language is chosen, only load that. #}
 			{{ javascript_include('js/highlight/highlighttiny.min.js') }}
-			{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/languages/' ~ paste.lang ~ '.min.js') }}
+			{{ javascript_include('//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/' ~ paste.lang ~ '.min.js') }}
 		{% endif %}
 		<script>hljs.initHighlightingOnLoad();</script>
 	{% endif %}

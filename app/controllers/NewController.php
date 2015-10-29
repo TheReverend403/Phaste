@@ -11,7 +11,6 @@ class NewController extends \Phalcon\Mvc\Controller
 
         // Generate random ids until we find one not in use.
         // This will cause one additional SQL query at minimum when creating a paste.
-        $id;
         do
         {
             $id = Text::random(Text::RANDOM_ALNUM, rand(5,13));
@@ -22,6 +21,7 @@ class NewController extends \Phalcon\Mvc\Controller
         $paste->id = $id;
         $paste->content = rtrim($this->request->getPost("content"));
         $paste->lang = $this->request->getPost("lang") == null ? "auto" : $this->request->getPost("lang");
+
         // No sanitisation needed if we accept anything at all to mean true and nothing to mean false.
         // Also addresses http://stackoverflow.com/a/14067312
         $paste->private = $this->request->getPost("private") == null ? 0 : 1;
