@@ -1,8 +1,8 @@
 <?php
 
-use Phalcon\Validation\Validator\Uniqueness;
-use Phalcon\Validation\Validator\StringLength;
-use Phalcon\Validation\Validator\Inclusionin;
+use Phalcon\Mvc\Model\Validator\Uniqueness;
+use Phalcon\Mvc\Model\Validator\StringLength;
+use Phalcon\Mvc\Model\Validator\Inclusionin;
 
 class Paste extends \Phalcon\Mvc\Model
 {
