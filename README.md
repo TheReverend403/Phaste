@@ -15,7 +15,7 @@ GitLab: https://gitlab.notoriousdev.com/foxdev/Paste
 * Install [Phalcon](https://phalconphp.com/en/).
 * Set up your webserver pretty much how you'd set any other Phalcon app up. See https://docs.phalconphp.com/en/latest/reference/nginx.html and https://docs.phalconphp.com/en/latest/reference/apache.html.
 * Create a database and user to access said database.
-* Run `mysql -u <user> -p <database> < schemas/paste.sql`, where `<user>` is the user you just created to initialise the database, and <database> is obviously the database name.
+* Run `mysql -u <user> -p <database> < schemas/paste.sql`, where `<user>` is the user you just created to initialise the database, and `<database>` is obviously the database name.
 * Copy config.ini.dist to config.ini and edit it as you see fit.
 * Probably have fun assuming nothing went wrong.
 
